@@ -1,0 +1,6 @@
+framework module ZSwiftHUD {
+  umbrella header "ZSwiftHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}
