@@ -46,19 +46,11 @@ class collectionCell: UICollectionViewCell {
     }
     
     func favoriteSave() {
+        favoriteInfo()
         do{
+            let realm = try! Realm()
             try realm.write {
                 realm.add(favorites)
-            }
-        }catch {
-            print("Error initializing new realm: \(error)")
-        }
-    }
-    
-    func favoriteDelete() {
-        do{
-            try realm.write {
-                realm.delete(favorites)
             }
         }catch {
             print("Error initializing new realm: \(error)")
@@ -90,11 +82,10 @@ class collectionCell: UICollectionViewCell {
     @IBAction func favoriteButtonPressed(_ sender: Any) {
         
         if buttonToggle == false {
-            favoriteInfo()
             favoriteSave()
             favoriteButton.setImage(UIImage(named: "favorite_full_icon"), for: .normal)
             buttonToggle = true
-            print("CLICOU")
+
         } else {
             favoriteButton.setImage(UIImage(named: "favorite_gray_icon"), for: .normal)
             buttonToggle = false

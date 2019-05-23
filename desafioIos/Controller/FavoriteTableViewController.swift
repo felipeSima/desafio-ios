@@ -15,6 +15,7 @@ import SwipeCellKit
 class FavoriteTableViewController: UITableViewController {
     
     let realm = try! Realm()
+    
     var movieInfo: Results<Favorites>?
     let baseUrl: String = "https://image.tmdb.org/t/p"
     let fileSize: String = "/w500"

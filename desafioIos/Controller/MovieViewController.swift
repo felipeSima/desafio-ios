@@ -11,12 +11,14 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 import SVProgressHUD
-
+import RealmSwift
 
 
 class MovieViewController: UIViewController {
     
     //MARK: - Properties, Constants
+    
+    let realm = try! Realm()
     
     var bankMovies = [Movies]()
     var searchMovies = [Movies]()

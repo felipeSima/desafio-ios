@@ -9,9 +9,11 @@
 import UIKit
 import Alamofire
 import AlamofireImage
-
+import RealmSwift
 
 class DescriptionViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     var bankMovies = [Movies]()
     var filterMovies = [Movies]()
